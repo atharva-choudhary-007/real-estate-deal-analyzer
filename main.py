@@ -25,6 +25,7 @@ rehab_cost = get_number("Rehabilitation cost ($): ")
 closing_costs = get_number("Closing costs ($): ")
 holding_costs = get_number("Holding costs ($): ")
 assignment_fee = get_number("Assignment fee ($): ")
+target_roi = get_number("Target ROI (%): ")
 
 result = calculate_deal(
     purchase_price,
@@ -32,17 +33,18 @@ result = calculate_deal(
     rehab_cost,
     closing_costs,
     holding_costs,
-    assignment_fee
+    assignment_fee,
+    target_roi
 )
 
 print("\n" + "=" * 45)
 print("             DEAL ANALYSIS")
 print("=" * 45)
 
-print(f"Total cost:        ${result['total_cost']:,.2f}")
-print(f"Expected profit:   ${result['profit']:,.2f}")
-print(f"ROI:               {result['roi']:.2f}%")
-print(f"Maximum offer:     ${result['max_offer']:,.2f}")
-print(f"Deal assessment:   {result['rating']}")
+print(f"Total cost:            ${result['total_cost']:,.2f}")
+print(f"Expected profit:       ${result['profit']:,.2f}")
+print(f"ROI:                   {result['roi']:.2f}%")
+print(f"Max purchase price:    ${result['max_purchase_price']:,.2f}")
+print(f"Deal assessment:       {result['rating']}")
 
 print("=" * 45)
